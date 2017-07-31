@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import url("../../node_modules/normalize.css");
+@import url("//at.alicdn.com/t/font_wda9rz5o39iwl8fr.css");
+
+@keyframes rotating
+{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+
+.pop{
+  position: fixed;
+  width: 180px;
+  max-width: 100%;
+  top:50%;
+  left:50%;
+  margin-left: -90px;
+  background: rgba(0,0,0,.6);
+  color: white;
+  border-radius: 5px;
+  padding: 15px 10px;
+  text-align: center;
+  line-height: 1.5;
+  z-index: 999;
+  &>*{
+    margin-top: 10px;
+    margin-bottom: 0;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+  .iconfont{
+    font-size: 32px;
+    display: block;
+    &.icon-loading{
+      animation: rotating 2s linear infinite;
+    }
+  }
+  p{
+    font-size: 13px;
+  }
+}
