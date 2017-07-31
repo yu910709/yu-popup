@@ -64,6 +64,15 @@ document.querySelector('.example-loading').innerHTML = (`
     </code>
 `);
 
+$('.example-loading .btn').click(function () {
+    popJs({
+        type:'loading',
+        title:'加载中',
+        desc:['请耐心等待','等待弹窗不加timing参数不会自动关闭'],
+        timing:2000
+    })
+});
+
 document.querySelector('.example-multi').innerHTML = (`
     <button class="btn btn-default btn-block">多行示例</button>
     <code>
@@ -98,14 +107,6 @@ $('.example-width .btn').click(function () {
     })
 });
 
-$('.example-loading .btn').click(function () {
-    popJs({
-        type:'loading',
-        title:'加载中',
-        desc:['请耐心等待','等待弹窗不加timing参数不会自动关闭'],
-        timing:2000
-    })
-});
 
 document.querySelector('.example-timing').innerHTML = (`
     <button class="btn btn-default btn-block">自动关闭示例</button>

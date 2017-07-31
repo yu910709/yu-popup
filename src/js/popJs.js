@@ -81,12 +81,19 @@ const popJs = (option) =>{
            }
        }
        //定义自动关闭定时
-       option.timing = option.timing?option.timing:3000;
+       if(option.type !== 'loading'){
+           option.timing = option.timing?option.timing:3000;
+       }
        let timing;
-       if(typeof(option.timing) === 'number'){
-           timing = (option.type !== 'loading')?option.timing:'';
-       }else{
-           console.warn(`'timing' in param 'option' can only accept number type -- popJs`);
+       switch (typeof(option.timing)){
+           case 'number':
+               timing = option.timing;
+               break;
+           case 'undefined':
+               timing = option.timing;
+               break;
+           default:
+               console.warn(`'timing' in param 'option' can only accept number type -- popJs`);
        }
        //创建DOM之前调用方法
        if(option.mounted){
