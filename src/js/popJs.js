@@ -28,8 +28,10 @@ const popJs = (option) =>{
            }
        }
        //构建前清除原来的pop
-       if(document.querySelector('.pop')){
-           document.querySelector('.pop').parentNode.removeChild(document.querySelector('.pop'));
+       if(document.querySelector('.pop-mask')){
+           document.querySelector('.pop-mask').parentNode.removeChild(document.querySelector('.pop-mask'));
+           document.querySelector('html').classList.remove('no-move');
+           document.querySelector('body').classList.remove('no-move');
        }
        //根据类型定义图标
        let icon;
@@ -105,6 +107,8 @@ const popJs = (option) =>{
        }
 
        //构建DOM
+       const popmask = document.createElement('section');
+       popmask.classList.add('pop-mask');
        const pop = document.createElement('div');
        pop.classList.add('pop');
        pop.innerHTML = `
@@ -112,23 +116,32 @@ const popJs = (option) =>{
            ${title}
            ${desc}
        `;
+       popmask.appendChild(pop);
+       document.querySelector('body').appendChild(popmask);
+       document.querySelector('html').classList.add('no-move');
+       document.querySelector('body').classList.add('no-move');
+       pop.style.marginTop = `${document.documentElement.clientHeight/2-pop.offsetHeight/2}px`;//垂直居中
        //自定义区域
        if(option.width){
            if(typeof(option.width)==='number'){
-               option.width = (option.width<document.documentElement.clientWidth)?option.width:document.documentElement.clientWidth;
-               pop.style.width = `${option.width}px`;
-               pop.style.marginLeft = `${-option.width/2}px`;//垂直居中
+               if(option.width>80){
+                   option.width = (option.width<document.documentElement.clientWidth)?option.width:document.documentElement.clientWidth;
+                   pop.style.width = `${option.width}px`;
+               }else{
+                   console.error(`'width' in param 'option' must greater than 80 -- popJs`);
+                   return false;
+               }
            }else{
                console.warn(`'width' in param 'option' can only accept number type -- popJs`);
            }
        }
-       document.querySelector('html').appendChild(pop);
-       pop.style.marginTop = `${-pop.offsetHeight/2}px`;//垂直居中
-        //定时关闭
+       //定时关闭
        if(timing){
            setTimeout(function () {
-               if(document.querySelector('.pop') === pop){//POP没有被顶掉的时候
-                   document.querySelector('html').removeChild(pop);
+               if(document.querySelector('.pop-mask') === popmask){//POP没有被顶掉的时候
+                   document.querySelector('body').removeChild(popmask);
+                   document.querySelector('html').classList.remove('no-move');
+                   document.querySelector('body').classList.remove('no-move');
                    //回调方法
                    if(option.callback){
                        if(typeof(option.callback) === 'function'){
