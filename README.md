@@ -7,7 +7,7 @@
 
   @param {(string|string[])} [option.desc]
 
-  @param {number} [option.width = 180] - max width 100%
+  @param {number} [option.width = 80] - max width 100%  min width 80px
 
   @param {number} [option.timing = 3000] - autoclose when pop has timing
 
