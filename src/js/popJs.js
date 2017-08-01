@@ -4,7 +4,7 @@ import '../css/popJs.scss';//引入样式表
  * @param {string} [option.type] - accept 'success' 'error' 'loading' ''
  * @param {string} [option.title]
  * @param {(string|string[])} [option.desc]
- * @param {number} [option.width = 180] - max width 100%
+ * @param {number} [option.width = 80] - max width 100%  min width 80px
  * @param {number} [option.timing = 3000] - autoclose when pop has timing
  * @param {function} [option.mounted] - before pop's dom into html
  * @callback callback

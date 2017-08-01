@@ -8,7 +8,7 @@ document.getElementById('app').innerHTML = (`
     <div class="example-loading"></div>
     <div class="example-multi"></div>
     <div class="example-width"></div>
-     <div class="example-html"></div>
+    <div class="example-html"></div>
     <div class="example-timing"></div>
     <div class="example-mounted"></div>
     <div class="example-callback"></div>
@@ -104,6 +104,35 @@ $('.example-width .btn').click(function () {
     popJs({
         desc: ['我们自己也可以定义弹窗的宽度','但不能超过显示区域宽度','超过会默认最大宽度'],
         width: 150,
+    })
+});
+
+document.querySelector('.example-html').innerHTML = (`
+    <button class="btn btn-default btn-block">富文本</button>
+    <code>
+    let title = someDom; <br>
+    let desc = someDom; <br>
+    pop({ <br>
+    &nbsp;&nbsp;  title, <br>
+    &nbsp;&nbsp;  desc, <br>
+    &nbsp;&nbsp;  timing:5000, <br>
+    })
+    </code>
+`);
+
+$('.example-html .btn').click(function () {
+    let title = `<h5 style="color:lightpink">popJs的DOM是ES6字符串模板拼接的</h5>`;
+    let desc = `
+        <ul style="list-style: none;background: white;color:darkgrey;padding: 10px;font-size: 12px;">
+           <li>所以我们支持富文本</li>
+           <li>你可以随意发挥构建DOM</li>
+           <li>只要HTML支持的popJs都可以支持</li>
+        </ul>
+    `;
+    popJs({
+        title,
+        desc,
+        timing:5000
     })
 });
 
