@@ -1,6 +1,6 @@
-import '../css/popJs.scss';//引入样式表
+import '../css/popup.scss';//引入样式表
 /**
- * @param {object} option - one entry param to function popJs
+ * @param {object} option - one entry param to function yu-popup
  * @param {string} [option.type] - accept 'success' 'error' 'loading' ''
  * @param {string} [option.title]
  * @param {(string|string[])} [option.desc]
@@ -10,7 +10,7 @@ import '../css/popJs.scss';//引入样式表
  * @callback callback
  * @param {function} [option.callback] - after pop's dom removed
  */
-const popJs = (option) =>{
+const popup = (option) =>{
    if(option){
        //参数合理性判断
        let allowParams = new Set(['type','title','desc','width','timing','mounted','callback']);
@@ -158,4 +158,4 @@ const popJs = (option) =>{
    }
 };
 
-export default popJs;
+export default popup;

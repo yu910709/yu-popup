@@ -16,3 +16,6 @@
   @callback callback
 
   @param {function} [option.callback] - after pop's dom removed
+
+
+  `示例文件参考dist下面的index.html`
