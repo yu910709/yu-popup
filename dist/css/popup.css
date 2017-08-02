@@ -445,33 +445,33 @@ template {
 [hidden] {
   display: none;
 }
-* {
-  box-sizing: border-box; }
-
-#app {
+#example {
   margin: 0 auto;
   width: 100%;
-  padding: 0 15px; }
-  #app > div {
+  padding: 0 15px;
+  box-sizing: border-box; }
+  #example * {
+    box-sizing: border-box; }
+  #example > div {
     margin-top: 15px; }
-    #app > div .btn {
+    #example > div .btn {
       border-radius: 3px;
       padding: 7px 12px;
       box-shadow: none;
       border: none;
       color: white;
       margin-bottom: 10px; }
-      #app > div .btn.btn-block {
+      #example > div .btn.btn-block {
         display: block; }
-      #app > div .btn.btn-success {
+      #example > div .btn.btn-success {
         background: darkseagreen; }
-      #app > div .btn.btn-error {
+      #example > div .btn.btn-error {
         background: indianred; }
-      #app > div .btn.btn-loading {
+      #example > div .btn.btn-loading {
         background: cadetblue; }
-      #app > div .btn.btn-default {
+      #example > div .btn.btn-default {
         background: dimgrey; }
-    #app > div code {
+    #example > div code {
       background: #f9f2f4;
       color: #c7254e;
       padding: 10px;
@@ -530,4 +530,4 @@ template {
     .pop-mask .pop p {
       font-size: 13px; }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvaW5kZXgtc2Fzcy44M2RhMmIwY2ViYjY5ZTMzNTRhNC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvcG9wdXAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

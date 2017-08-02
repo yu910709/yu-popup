@@ -1,3 +1,4 @@
+### npm install --save-dev yu-popup
 
   @param {object} option - one entry param to function popJs
 
@@ -17,5 +18,3 @@
 
   @param {function} [option.callback] - after pop's dom removed
 
-
-  `示例文件参考dist下面的index.html`

@@ -1,7 +1,8 @@
 import '../css/app.scss';
+import '../css/popup.scss';//引入POP样式表
 import popup from './popup';
 
-document.getElementById('app').innerHTML = (`
+document.getElementById('example').innerHTML = (`
     <h1>示例</h1>
     <div class="example-success"></div>
     <div class="example-error"></div>

@@ -13,16 +13,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');//html模板引擎
 const CleanWebpackPlugin = require('clean-webpack-plugin');//构建时清理
 const autoprefixer = require('autoprefixer');//补全css各种hack
 const ExtractTextPlugin = require("extract-text-webpack-plugin");//分离样式表
-const extractCSS = new ExtractTextPlugin(process.env.NODE_ENV === 'production'?'css/[name]-css.[chunkhash].css':'css/[name]-css.css');//导出css
-const extractSass = new ExtractTextPlugin(process.env.NODE_ENV === 'production'?'css/[name]-sass.[chunkhash].css':'css/[name]-sass.css');//导出sass
+const extractCSS = new ExtractTextPlugin(process.env.NODE_ENV === 'production'?'css/[name].css':'css/[name]-css.css');//导出css
+const extractSass = new ExtractTextPlugin(process.env.NODE_ENV === 'production'?'css/[name].css':'css/[name]-sass.css');//导出sass
 
 module.exports = {
     devtool: process.env.NODE_ENV === 'production'?"inline-source-map":"source map",
     entry: {
-        index: './src/js/index.js'
+        popup: './src/js/index.js'
     },
     output: {
-        filename: process.env.NODE_ENV === 'production'?'js/[name].bundle.[chunkhash].js':'js/[name].bundle.js',
+        filename: process.env.NODE_ENV === 'production'?'js/[name].js':'js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {

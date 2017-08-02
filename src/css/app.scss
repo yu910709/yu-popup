@@ -1,13 +1,12 @@
 @import url("../../node_modules/normalize.css");//初始化样式表
-
-*{
-  box-sizing: border-box;
-}
-
-#app{
+#example{
   margin: 0 auto;
   width: 100%;
   padding: 0 15px;
+  box-sizing: border-box;
+  *{
+    box-sizing: border-box;
+  }
   &>div{
     margin-top:15px;
     .btn{
