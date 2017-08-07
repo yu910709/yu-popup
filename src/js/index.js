@@ -1,5 +1,4 @@
 import '../css/app.scss';
-import '../css/popup.scss';//引入POP样式表
 import popup from './popup';
 
 document.getElementById('example').innerHTML = (`

@@ -1,6 +1,6 @@
 {
   "name": "yu-popup",
-  "version": "1.0.18",
+  "version": "1.0.51",
   "description": "a simple alert with no button",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,10 @@
     "publish": "cross-env NODE_ENV=devcelop PLATFORM=web webpack --config webpack.publish.config.js",
     "lib": "babel src --presets babel-preset-es2015 --out-dir lib"
   },
-  "keywords": ["pop up","pop"],
+  "keywords": [
+    "pop up",
+    "pop"
+  ],
   "author": "watanabeyu",
   "license": "ISC",
   "devDependencies": {
@@ -39,7 +42,8 @@
     "typescript": "^2.4.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^2.5.1",
+    "yu-popup": "^1.0.50"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",

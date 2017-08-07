@@ -9,7 +9,9 @@
  * @callback callback
  * @param {function} [option.callback] - after pop's dom removed
  */
-const popup = (option) =>{
+
+require('../css/popup.scss');
+module.exports = (option) =>{
     if(option){
         //参数合理性判断
         let allowParams = new Set(['type','title','desc','width','timing','mounted','callback']);
@@ -156,5 +158,3 @@ const popup = (option) =>{
         console.error(`there is no param 'option' , popJs can not work without any config , please check you code . -- popJs`)
     }
 };
-
-export default popup;
