@@ -1,5 +1,5 @@
 import '../css/app.scss';
-import popup from './popup';
+import popup from '../../index';
 
 document.getElementById('example').innerHTML = (`
     <h1>示例</h1>

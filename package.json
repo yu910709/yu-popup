@@ -1,14 +1,14 @@
 {
   "name": "yu-popup",
-  "version": "1.0.51",
+  "version": "1.1.0",
   "description": "a simple alert with no button",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=devcelop PLATFORM=web webpack-dev-server",
     "build": "cross-env NODE_ENV=production PLATFORM=web webpack",
-    "publish": "cross-env NODE_ENV=devcelop PLATFORM=web webpack --config webpack.publish.config.js",
-    "lib": "babel src --presets babel-preset-es2015 --out-dir lib"
+    "lib": "cross-env NODE_ENV=devcelop PLATFORM=web webpack --config webpack.publish.config.js",
+    "babel": "babel src --presets babel-preset-es2015 --out-dir lib"
   },
   "keywords": [
     "pop up",
@@ -43,7 +43,7 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1",
-    "yu-popup": "^1.0.50"
+    "yu-popup": "^1.0.67"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
