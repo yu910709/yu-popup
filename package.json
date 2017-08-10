@@ -43,12 +43,12 @@
     "typescript": "^2.4.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.1",
-    "yu-popup": "^1.0.67"
+    "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "yu-popup": "^1.0.67"
   }
 }
