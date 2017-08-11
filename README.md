@@ -1,5 +1,9 @@
 ### npm install --save-dev yu-popup
 
+### import popup from 'yu-popup'
+
+
+
   @param {object} option - one entry param to function popJs
 
   @param {string} [option.type] - accept 'success' 'error' 'loading' ''
