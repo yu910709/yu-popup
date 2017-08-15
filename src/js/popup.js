@@ -9,7 +9,6 @@
  * @callback callback
  * @param {function} [option.callback] - after pop's dom removed
  */
-import 'babel-polyfill';
 import '../css/popup.scss';
 const popup = (option) =>{
     if(option){
