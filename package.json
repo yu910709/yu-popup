@@ -1,6 +1,6 @@
 {
   "name": "yu-popup",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "description": "a simple alert with no button",
   "main": "index.js",
   "scripts": {
@@ -47,7 +47,6 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
-    "lodash": "^4.17.4",
-    "yu-popup": "^1.0.67"
+    "lodash": "^4.17.4"
   }
 }
