@@ -15,6 +15,7 @@ const autoprefixer = require('autoprefixer');//补全css各种hack
 const ExtractTextPlugin = require("extract-text-webpack-plugin");//分离样式表
 const extractCSS = new ExtractTextPlugin(process.env.NODE_ENV === 'production'?'css/[name].css':'css/[name]-css.css');//导出css
 const extractSass = new ExtractTextPlugin(process.env.NODE_ENV === 'production'?'css/[name].css':'css/[name]-sass.css');//导出sass
+const babili = require('babili-webpack-plugin')//babel压缩
 
 module.exports = {
     devtool: process.env.NODE_ENV === 'production'?"inline-source-map":"source map",
@@ -124,9 +125,7 @@ module.exports = {
             template: __dirname + "/src/index.tmpl.html",
         }),
         //丑化JS
-        new webpack.optimize.UglifyJsPlugin({
-            compress: process.env.NODE_ENV === 'production'
-        }),
+        (process.env.NODE_ENV === 'production') ? new babili() : function(){},
         //提出公共模块
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common'
