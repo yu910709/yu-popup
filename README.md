@@ -1,4 +1,4 @@
-### npm install --save-dev yu-popup
+### npm install --save yu-popup
 
 ### import popup from 'yu-popup'
 
