@@ -1,13 +1,13 @@
 {
   "name": "yu-popup",
-  "version": "1.1.10",
+  "version": "1.1.12",
   "description": "a simple alert with no button",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=devcelop PLATFORM=web webpack-dev-server",
     "build": "cross-env NODE_ENV=production PLATFORM=web webpack",
-    "lib": "babel src --presets babel-preset-es2015 --out-dir lib"
+    "lib": "cross-env NODE_ENV=devcelop PLATFORM=web webpack --config webpack.publish.js"
   },
   "keywords": [
     "pop up",
