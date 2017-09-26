@@ -20,11 +20,11 @@ const popup = (option) =>{
         }
         let difference = new Set([...userParams].filter(x => !allowParams.has(x)));//计算用户的参数和允许参数的差集
         if(userParams.size - difference.size === 0){//没有有用的配置项
-            console.error(`useful configuration in param 'option' is none , Please fill in at least one useful configuration just like : '${Array.from(allowParams)}' -- popJs`);
+            console.error(`useful configuration in param 'option' is none , Please fill in at least one useful configuration just like : '${Array.from(allowParams)}' -- yu-popup`);
             return false;
         }else{
             if(difference.size>0){//有未定的参数键值对
-                console.warn(`'${Array.from(difference)}' are not allowed , param 'option' can only accept these configuration : '${Array.from(allowParams)}' -- popJs`)
+                console.warn(`'${Array.from(difference)}' are not allowed , param 'option' can only accept these configuration : '${Array.from(allowParams)}' -- yu-popup`)
             }
         }
         //构建前清除原来的pop
@@ -51,7 +51,7 @@ const popup = (option) =>{
                 break;
             default:
                 icon = '';
-                console.warn(`unknown type '${option.type}' in param 'option' , 'type' can only accept these values : 'success' 'error' 'loading' '', if you do not need 'type' , please don't configure it -- popJs`)
+                console.warn(`unknown type '${option.type}' in param 'option' , 'type' can only accept these values : 'success' 'error' 'loading' '', if you do not need 'type' , please don't configure it -- yu-popup`)
         }
         //定义标题
         option.title = option.title?option.title:'';
@@ -60,7 +60,7 @@ const popup = (option) =>{
             if(typeof(option.title) === 'string'){
                 title = `<h3>${option.title}</h3>`;
             }else{
-                console.warn(`'title' in param 'option' can only accept string type -- popJs`);
+                console.warn(`'title' in param 'option' can only accept string type -- yu-popup`);
             }
         }
         //定义描述
@@ -79,7 +79,7 @@ const popup = (option) =>{
                     desc+=`</p>`;
                     break;
                 default:
-                    console.warn(`'desc' in param 'option' can only accept string/array type -- popJs`);
+                    console.warn(`'desc' in param 'option' can only accept string/array type -- yu-popup`);
             }
         }
         //定义自动关闭定时
@@ -95,14 +95,14 @@ const popup = (option) =>{
                 timing = option.timing;
                 break;
             default:
-                console.warn(`'timing' in param 'option' can only accept number type -- popJs`);
+                console.warn(`'timing' in param 'option' can only accept number type -- yu-popup`);
         }
         //创建DOM之前调用方法
         if(option.mounted){
             if(typeof(option.mounted)==='function'){
                 option.mounted();
             }else{
-                console.warn(`'mounted' in param 'option' can only accept function type -- popJs`);
+                console.warn(`'mounted' in param 'option' can only accept function type -- yu-popup`);
             }
         }
 
@@ -128,11 +128,11 @@ const popup = (option) =>{
                     option.width = (option.width<document.documentElement.clientWidth)?option.width:document.documentElement.clientWidth;
                     pop.style.width = `${option.width}px`;
                 }else{
-                    console.error(`'width' in param 'option' must greater than 80 -- popJs`);
+                    console.error(`'width' in param 'option' must greater than 80 -- yu-popup`);
                     return false;
                 }
             }else{
-                console.warn(`'width' in param 'option' can only accept number type -- popJs`);
+                console.warn(`'width' in param 'option' can only accept number type -- yu-popup`);
             }
         }
         //定时关闭
@@ -147,14 +147,14 @@ const popup = (option) =>{
                         if(typeof(option.callback) === 'function'){
                             option.callback()
                         }else{
-                            console.warn(`'callback' in param 'option' can only accept function type -- popJs`);
+                            console.warn(`'callback' in param 'option' can only accept function type -- yu-popup`);
                         }
                     }
                 }
             },timing)
         }
     }else{
-        console.error(`there is no param 'option' , popJs can not work without any config , please check you code . -- popJs`)
+        console.error(`there is no param 'option' , yu-popup can not work without any config , please check you code . -- yu-popup`)
     }
 };
 

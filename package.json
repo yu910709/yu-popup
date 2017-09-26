@@ -1,6 +1,6 @@
 {
   "name": "yu-popup",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "a simple alert with no button",
   "main": "index.js",
   "scripts": {
