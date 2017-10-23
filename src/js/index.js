@@ -110,8 +110,14 @@ $('.example-width .btn').click(function () {
 document.querySelector('.example-html').innerHTML = (`
     <button class="btn btn-default btn-block">富文本</button>
     <code>
-    let title = someDom; <br>
-    let desc = someDom; <br>
+    let title = \`&lt;h5 style="color:lightpink"&gt;popJs的DOM是ES6字符串模板拼接的&lt;/h5&gt;\`; </br>
+    let desc = \` </br>
+        &lt;ul style="list-style: none;background: white;color:darkgrey;padding: 10px;font-size: 12px;"&gt; </br>
+           &lt;li&gt;所以我们支持富文本&lt;/li&gt; </br>
+           &lt;li&gt;你可以随意发挥构建DOM&lt;/li&gt; </br>
+           &lt;li&gt;只要HTML支持的popJs都可以支持&lt;/li&gt; </br>
+        &lt;/ul&gt; </br>
+    \`; </br>
     popup({ <br>
     &nbsp;&nbsp;  title, <br>
     &nbsp;&nbsp;  desc, <br>
