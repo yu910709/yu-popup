@@ -58,7 +58,7 @@ const popup = (option) =>{
         let title = '';
         if(option.title !== ''){
             if(typeof(option.title) === 'string'){
-                title = `<h3>${option.title}</h3>`;
+                title = `<h4>${option.title}</h4>`;
             }else{
                 console.warn(`'title' in param 'option' can only accept string type -- yu-popup`);
             }
@@ -83,7 +83,7 @@ const popup = (option) =>{
             }
         }
         //定义自动关闭定时
-        if(option.type !== 'loading'){
+        if(option.timing&&(option.type !== 'loading')&&(option.timing !== 0)){
             option.timing = option.timing?option.timing:3000;
         }
         let timing;
