@@ -83,8 +83,8 @@ const popup = (option) =>{
             }
         }
         //定义自动关闭定时
-        if(option.timing&&(option.type !== 'loading')&&(option.timing !== 0)){
-            option.timing = option.timing?option.timing:3000;
+        if((option.type !== 'loading')&&(option.timing !== '')&&(option.timing !== 0)){
+            option.timing = option.timing?option.timing:1500;
         }
         let timing;
         switch (typeof(option.timing)){
