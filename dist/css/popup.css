@@ -1,0 +1,86 @@
+@import url(//at.alicdn.com/t/font_wda9rz5o39iwl8fr.css);#example {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box; }
+  #example * {
+    box-sizing: border-box; }
+  #example > div {
+    margin-top: 15px; }
+    #example > div .btn {
+      border-radius: 3px;
+      padding: 7px 12px;
+      box-shadow: none;
+      border: none;
+      color: white;
+      margin-bottom: 10px; }
+      #example > div .btn.btn-block {
+        display: block; }
+      #example > div .btn.btn-success {
+        background: darkseagreen; }
+      #example > div .btn.btn-error {
+        background: indianred; }
+      #example > div .btn.btn-loading {
+        background: cadetblue; }
+      #example > div .btn.btn-default {
+        background: dimgrey; }
+    #example > div code {
+      background: #f9f2f4;
+      color: #c7254e;
+      padding: 10px;
+      display: block;
+      margin-top: 10px; }
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.no-move {
+  overflow: hidden !important; }
+
+.pop-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  padding: 0 15px; }
+  .pop-mask .pop {
+    display: inline-block;
+    margin: 50% auto 0;
+    min-width: 80px;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 5px;
+    padding: 15px 10px;
+    text-align: center;
+    line-height: 1.5;
+    z-index: 999; }
+    .pop-mask .pop > * {
+      margin-top: 10px;
+      margin-bottom: 0; }
+      .pop-mask .pop > *:first-child {
+        margin-top: 0; }
+    .pop-mask .pop .iconfont {
+      font-size: 32px;
+      display: block; }
+      .pop-mask .pop .iconfont.icon-loading {
+        -webkit-animation: rotating 2s linear infinite;
+        animation: rotating 2s linear infinite; }
+    .pop-mask .pop p {
+      font-size: 13px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvcG9wdXAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
