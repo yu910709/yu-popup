@@ -1,1 +1,1 @@
-module.exports = require('./lib/popup');
+module.exports = require('./lib/plugin');

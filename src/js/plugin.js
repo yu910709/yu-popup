@@ -1,19 +1,19 @@
 /**
- * @param {object} option - one entry param to function yu-popup
- * @param {string} [option.type] - accept 'success' 'error' 'loading' ''
- * @param {string} [option.title]
- * @param {(string|string[])} [option.desc]
- * @param {number} [option.width = 80] - max width 100%  min width 80px
- * @param {number} [option.timing = 3000] - autoclose when pop has timing
- * @param {function} [option.mounted] - before pop's dom into html
- * @callback callback
- * @param {function} [option.callback] - after pop's dom removed
+ * @param {object[]} option
+ * @param {string} [option[].type = ''] - popup的类型 可选success error info loading 和 ''
+ * @param {number|string} [option[].iconType = 0] - icon的类型 0到5
+ * @param {string} [option[].title] - popup的标题
+ * @param {(string|string[])} [option[].desc] - popup的描述文本 如果是数组会根据数组字段断行
+ * @param {number} [option[].width = 80] - 默认宽度 最小80px
+ * @param {number} [option[].timing = 3000] - 自动关闭时间 loading和''没有此限制
+ * @param {callback} [option[].mounted] - popup DOM创建完成
+ * @param {callback} [option[].callback] - popup移除之后调用
  */
-import '../css/popup.scss';
-const popup = (option) =>{
+import '../css/plugin.scss';
+const YuPopup = (option) =>{
     if(option){
         //参数合理性判断
-        let allowParams = new Set(['type','title','desc','width','timing','mounted','callback']);
+        let allowParams = new Set(['type','iconType','title','desc','width','timing','mounted','callback']);
         let userParams = new Set();
         for (let i in option) {
             userParams.add(i)
@@ -36,15 +36,19 @@ const popup = (option) =>{
         //根据类型定义图标
         let icon;
         option.type = option.type?option.type:'';
+        option.iconType = (option.iconType)?Number(option.iconType):0;
         switch (option.type){
             case 'success':
-                icon = `<i class="iconfont icon-smile"></i>`;
+                icon = `<i class="iconfont icon-success-${option.iconType}"></i>`;
                 break;
             case 'error':
-                icon = `<i class="iconfont icon-cry"></i>`;
+                icon = `<i class="iconfont icon-error-${option.iconType}"></i>`;
+                break;
+            case 'info':
+                icon = `<i class="iconfont icon-info-${option.iconType}"></i>`;
                 break;
             case 'loading':
-                icon = `<i class="iconfont icon-loading"></i>`;
+                icon = `<i class="iconfont icon-loading-${option.iconType} loading"></i>`;
                 break;
             case '':
                 icon = '';
@@ -158,4 +162,4 @@ const popup = (option) =>{
     }
 };
 
-export default popup;
+export default YuPopup;

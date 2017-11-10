@@ -20,7 +20,7 @@ const babili = require('babili-webpack-plugin')//babel压缩
 module.exports = {
     devtool: process.env.NODE_ENV === 'production'?"inline-source-map":"source map",
     entry: {
-        popup: './src/js/index.js'
+        index: './src/js/index.js'
     },
     output: {
         filename: process.env.NODE_ENV === 'production'?'js/[name].js':'js/[name].bundle.js',
@@ -126,10 +126,6 @@ module.exports = {
         }),
         //丑化JS
         (process.env.NODE_ENV === 'production') ? new babili() : function(){},
-        //提出公共模块
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common'
-        }),
         //样式导出配置
         extractCSS,
         extractSass

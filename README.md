@@ -1,52 +1,48 @@
-# 这是一个简单的自用书写插件发布到npm用的包
+## Introduce  
 
-### 安装步骤
+this script is a simple popup and fit for mobile
 
-    1.请确保全局安装了 webpack npm
+## Quick to start:
 
-    2.下载克隆此工程
+install:     
+`npm install --save yu-popup `    
+import:  
+`import popup from 'yu-popup' `
 
-    3.npm install
+## Example
 
-    4.npm run dev (开发环境) npm run build (发布环境)
-    
-    * 请在lib目录下的脚本顶部加上 module.exports = 
-    （因为webpack打包出来的文件没有export，而是一个大的闭包。
-    又因为有图片字体等文件，插件比较丰富，所以需要webpack打包，期待更好的处理方法，
-    简单的纯脚本plugin可以参考我另一个脚手架：babel-cli-plugin）
+>You can use `npm run dev` to check the example file in node package
 
-### 目录结构
+    popup({
+            type:'success',
+            iconType:0,
+            title:'hey!',
+            desc:['you got this message','beautiful,isn't it?'],
+            width:80,
+            timing:1500,
+            mounted(){
+                console.log('popup will be create')
+            },
+            callback(){
+               console.log('popup has been destroyed')
+            }
+        })
+        
+## JSDoc
 
-> `src 开发环境`
+ * @param {object[]} option
+ * @param {string} [option[].type = ''] - type of popup,accept 'success' 'error' 'info' 'loading' & ''(no image)
+ * @param {number|string} [option[].iconType = 0] - type of icon,through 1 to 5
+ * @param {string} [option[].title] - title of popup
+ * @param {(string|string[])} [option[].desc] - description of popup ,if it be array,the description will show in multi line
+ * @param {number} [option[].width = 80] - width of popup,the min width is 80,don't less than it
+ * @param {number} [option[].timing = 1500] - auto close time,if popup's type is 'loading' or '',timing will be useless
+ * @param {callback} [option[].mounted] - run before popup join in dom
+ * @param {callback} [option[].callback] -run after popup destroyed
 
->> css 里面app.scss用来做为example的样式,plugin.scss是plugin的样式
+## Links
 
->> js 里面app.js用来做为example的脚本,plugin.js是plugin的脚本
-
->> ... 其他类如IMG等等文件夹
-
->> template.html 主模板/页面
-
-> `dist 发布环境 通常是演示文件`
-
->> ... 产出文件 index.html为主入口
-
-> `lib 发布NPM包 请在脚本最前面加上 module.exports = `
-
-> node_modules 模块包
-
-> .gitignore git 忽略文件
-
-> index.js npm官方入口,可以在package.json中配置
-
-> .babelrc babel配置文件
-
-> package.json 包信息
-
-> postcss.config.js postcss配置文件
-
-> webpack.config.js webpack配置文件
-
-> README.md 说明文档（本文件）
-
-
+##### github  
+see https://github.com/watanabeyu0709/yu-popup
+##### npm  
+see https://www.npmjs.com/package/yu-popup

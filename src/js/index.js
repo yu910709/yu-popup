@@ -1,10 +1,11 @@
 import '../css/app.scss';
-import popup from './popup';
+import popup from './plugin';
 
 document.getElementById('example').innerHTML = (`
     <h1>示例</h1>
     <div class="example-success"></div>
     <div class="example-error"></div>
+    <div class="example-info"></div>
     <div class="example-loading"></div>
     <div class="example-multi"></div>
     <div class="example-width"></div>
@@ -18,9 +19,10 @@ document.querySelector('.example-success').innerHTML = (`
     <button class="btn btn-success btn-block">成功示例</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   type:'success', <br>
-    &nbsp;&nbsp;   title:'成功啦!', <br>
-    &nbsp;&nbsp;   desc:'这里是描述性质的文字' <br>
+    &nbsp;&nbsp;type:'success', <br>
+    &nbsp;&nbsp;iconType:0, <br>
+    &nbsp;&nbsp;title:'成功啦!', <br>
+    &nbsp;&nbsp;desc:'这里是描述性质的文字' <br>
    })
     </code>
 `);
@@ -28,6 +30,7 @@ document.querySelector('.example-success').innerHTML = (`
 $('.example-success .btn').click(function () {
     popup({
         type:'success',
+        iconType:0,
         title:'成功啦',
         desc:'这里是描述性质的文字',
     })
@@ -37,9 +40,9 @@ document.querySelector('.example-error').innerHTML = (`
     <button class="btn btn-error btn-block">失败示例</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   type:'error', <br>
-    &nbsp;&nbsp;   title:'失败了!', <br>
-    &nbsp;&nbsp;   desc:'仔细检查检查原因吧' <br>
+    &nbsp;&nbsp;type:'error', <br>
+    &nbsp;&nbsp;iconType:'1', <br>
+    &nbsp;&nbsp;desc:'仔细检查检查原因吧' <br>
    })
     </code>
 `);
@@ -47,8 +50,28 @@ document.querySelector('.example-error').innerHTML = (`
 $('.example-error .btn').click(function () {
     popup({
         type:'error',
-        title:'失败了',
+        iconType:'1',
         desc:'仔细检查检查原因吧',
+    })
+});
+
+document.querySelector('.example-info').innerHTML = (`
+    <button class="btn btn-info btn-block">信息页面</button>
+    <code>
+    popup({ <br>
+    &nbsp;&nbsp;   type:'info', <br>
+    &nbsp;&nbsp;   iconType:3,:'info', <br>
+    &nbsp;&nbsp;   title:'失败了!', <br>
+    &nbsp;&nbsp;   desc:'仔细检查检查原因吧' <br>
+   })
+    </code>
+`);
+
+$('.example-info .btn').click(function () {
+    popup({
+        type:'info',
+        iconType:3,
+        title:'提示文字',
     })
 });
 
@@ -56,10 +79,11 @@ document.querySelector('.example-loading').innerHTML = (`
     <button class="btn btn-loading btn-block">等待示例</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   type:'loading', <br>
-    &nbsp;&nbsp;   title:'加载中', <br>
-    &nbsp;&nbsp;   desc:['请耐心等待','等待弹窗不加timing参数不会自动关闭'] <br>
-    &nbsp;&nbsp;   timing:2000 <br>
+    &nbsp;&nbsp;type:'loading', <br>
+    &nbsp;&nbsp;iconType:4, <br>
+    &nbsp;&nbsp;title:'加载中', <br>
+    &nbsp;&nbsp;desc:['请耐心等待','等待弹窗不加timing参数不会自动关闭'] <br>
+    &nbsp;&nbsp;timing:2000 <br>
    })
     </code>
 `);
@@ -67,6 +91,7 @@ document.querySelector('.example-loading').innerHTML = (`
 $('.example-loading .btn').click(function () {
     popup({
         type:'loading',
+        iconType:4,
         title:'加载中',
         desc:['请耐心等待','等待弹窗不加timing参数不会自动关闭'],
         timing:2000
@@ -77,8 +102,8 @@ document.querySelector('.example-multi').innerHTML = (`
     <button class="btn btn-default btn-block">多行示例</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   title:'这里是一个多行文本的示例', <br>
-    &nbsp;&nbsp;   desc:['我是第一行','我是第二行'] <br>
+    &nbsp;&nbsp;title:'这里是一个多行文本的示例', <br>
+    &nbsp;&nbsp;desc:['我是第一行','我是第二行'] <br>
    })
     </code>
 `);
@@ -94,7 +119,7 @@ document.querySelector('.example-width').innerHTML = (`
     <button class="btn btn-default btn-block">自定义宽度</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   desc:['我们自己也可以定义弹窗的宽度','但不能超过显示区域宽度','超过会默认最大宽度'],<br>
+    &nbsp;&nbsp;desc:['我们自己也可以定义弹窗的宽度','但不能超过显示区域宽度','超过会默认最大宽度'],<br>
     &nbsp;&nbsp;   width: 150<br>
    })
     </code>
@@ -112,16 +137,16 @@ document.querySelector('.example-html').innerHTML = (`
     <code>
     let title = \`&lt;h5 style="color:lightpink"&gt;popJs的DOM是ES6字符串模板拼接的&lt;/h5&gt;\`; </br>
     let desc = \` </br>
-        &lt;ul style="list-style: none;background: white;color:darkgrey;padding: 10px;font-size: 12px;"&gt; </br>
-           &lt;li&gt;所以我们支持富文本&lt;/li&gt; </br>
-           &lt;li&gt;你可以随意发挥构建DOM&lt;/li&gt; </br>
-           &lt;li&gt;只要HTML支持的popJs都可以支持&lt;/li&gt; </br>
-        &lt;/ul&gt; </br>
+    &nbsp;&nbsp;&lt;ul style="list-style: none;background: white;color:darkgrey;padding: 10px;font-size: 12px;"&gt; </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li style="color:darkgrey"&gt;所以我们支持富文本&lt;/li&gt; </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li style="color:darkgrey"&gt;你可以随意发挥构建DOM&lt;/li&gt; </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li style="color:darkgrey"&gt;只要HTML支持的popJs都可以支持&lt;/li&gt; </br>
+    &nbsp;&nbsp;&lt;/ul&gt; </br>
     \`; </br>
     popup({ <br>
-    &nbsp;&nbsp;  title, <br>
-    &nbsp;&nbsp;  desc, <br>
-    &nbsp;&nbsp;  timing:5000, <br>
+    &nbsp;&nbsp;title, <br>
+    &nbsp;&nbsp;desc, <br>
+    &nbsp;&nbsp;timing:5000, <br>
     })
     </code>
 `);
@@ -130,9 +155,9 @@ $('.example-html .btn').click(function () {
     let title = `<h5 style="color:lightpink">popJs的DOM是ES6字符串模板拼接的</h5>`;
     let desc = `
         <ul style="list-style: none;background: white;color:darkgrey;padding: 10px;font-size: 12px;">
-           <li>所以我们支持富文本</li>
-           <li>你可以随意发挥构建DOM</li>
-           <li>只要HTML支持的popJs都可以支持</li>
+           <li style="color:darkgrey">所以我们支持富文本</li>
+           <li style="color:darkgrey">你可以随意发挥构建DOM</li>
+           <li style="color:darkgrey">只要HTML支持的popJs都可以支持</li>
         </ul>
     `;
     popup({
@@ -147,9 +172,9 @@ document.querySelector('.example-timing').innerHTML = (`
     <button class="btn btn-default btn-block">自动关闭示例</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   title:'弹窗将在5秒后关闭', <br>
-    &nbsp;&nbsp;   desc:'默认三秒' <br>
-    &nbsp;&nbsp;   timing:5000 <br>
+    &nbsp;&nbsp;title:'弹窗将在5秒后关闭', <br>
+    &nbsp;&nbsp;desc:'默认1.5秒' <br>
+    &nbsp;&nbsp;timing:5000 <br>
    })
     </code>
 `);
@@ -157,7 +182,7 @@ document.querySelector('.example-timing').innerHTML = (`
 $('.example-timing .btn').click(function () {
     popup({
         title:'弹窗将在5秒后关闭',
-        desc: '默认三秒',
+        desc: '默认1.5秒',
         timing:5000
     })
 });
@@ -166,11 +191,11 @@ document.querySelector('.example-mounted').innerHTML = (`
     <button class="btn btn-default btn-block">弹窗创建前方法</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   type:'success', <br>
-    &nbsp;&nbsp;   desc:'弹窗创建成功啦',<br>
-    &nbsp;&nbsp;   mounted(){ <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;   alert('弹窗即将创建') <br>
-    &nbsp;&nbsp;   } <br>
+    &nbsp;&nbsp;type:'success', <br>
+    &nbsp;&nbsp;desc:'弹窗创建成功啦',<br>
+    &nbsp;&nbsp;mounted(){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;alert('弹窗即将创建') <br>
+    &nbsp;&nbsp;} <br>
    })
     </code>
 `);
@@ -189,11 +214,11 @@ document.querySelector('.example-callback').innerHTML = (`
     <button class="btn btn-default btn-block">回调方法</button>
     <code>
     popup({ <br>
-    &nbsp;&nbsp;   type:'success', <br>
-    &nbsp;&nbsp;   desc:'弹窗即将关闭',<br>
-    &nbsp;&nbsp;   callback(){ <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;   alert('弹窗关闭啦') <br>
-    &nbsp;&nbsp;   } <br>
+    &nbsp;&nbsp;type:'success', <br>
+    &nbsp;&nbsp;desc:'弹窗即将关闭',<br>
+    &nbsp;&nbsp;callback(){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;alert('弹窗关闭啦') <br>
+    &nbsp;&nbsp;} <br>
    })
     </code>
 `);
