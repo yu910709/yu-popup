@@ -2,7 +2,7 @@
 
 this script is a simple popup and fit for mobile
 
-## Quick to start:
+## Quick to start
 
 install:     
 `npm install --save yu-popup `    
