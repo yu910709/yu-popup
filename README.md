@@ -28,7 +28,7 @@ popup({
 ```
 
 ## JSDoc
-```JSDoc
+```jsdoc
  * @param {object[]} option
  * @param {string} [option[].type = ''] - type of popup,accept 'success' 'error' 'info' 'loading' & ''(no image)
  * @param {number|string} [option[].iconType = 0] - type of icon,through 1 to 5
