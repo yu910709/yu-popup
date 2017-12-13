@@ -12,9 +12,10 @@ $ import popup from 'yu-popup'
 
 ## Example
 
->You can use `npm run dev` to check the example file in node package
+You can use `npm run dev` to check the example file in node package
 
-    popup({
+```js
+popup({
             type:'success',
             iconType:0,
             title:'hey!',
@@ -28,6 +29,7 @@ $ import popup from 'yu-popup'
                console.log('popup has been destroyed')
             }
         })
+```
 
 ## JSDoc
 
