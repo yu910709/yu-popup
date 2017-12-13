@@ -41,7 +41,7 @@ popup({
 ```
 
 ## Links
-[![github text](http://p0kpwl4c8.bkt.clouddn.com/icon/github_c.png "github")](https://github.com/watanabeyu0709/yu-popup){:height="100px" width="100px"}
+[![github text](http://p0kpwl4c8.bkt.clouddn.com/icon/github_c.png!icon_sm "github")](https://github.com/watanabeyu0709/yu-popup)
 ##### github
 see https://github.com/watanabeyu0709/yu-popup
 ##### npm
