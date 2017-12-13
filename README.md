@@ -1,9 +1,7 @@
 ## Introduce
-
 this script is a simple popup and fit for mobile
 
 ## Quick to start
-
 Using npm:
 ```shell
 $ npm install --save yu-popup
@@ -11,9 +9,7 @@ $ import popup from 'yu-popup'
 ```
 
 ## Example
-
 You can use `npm run dev` to check the example file in node package
-
 ```js
 popup({
             type:'success',
@@ -32,7 +28,7 @@ popup({
 ```
 
 ## JSDoc
-
+```JSDoc
  * @param {object[]} option
  * @param {string} [option[].type = ''] - type of popup,accept 'success' 'error' 'info' 'loading' & ''(no image)
  * @param {number|string} [option[].iconType = 0] - type of icon,through 1 to 5
@@ -42,9 +38,10 @@ popup({
  * @param {number} [option[].timing = 1500] - auto close time,if popup's type is 'loading' or '',timing will be useless
  * @param {callback} [option[].mounted] - run before popup join in dom
  * @param {callback} [option[].callback] -run after popup destroyed
+```
 
 ## Links
-
+[![github text](http://p0kpwl4c8.bkt.clouddn.com/icon/github_c.png "github")](https://github.com/watanabeyu0709/yu-popup)
 ##### github
 see https://github.com/watanabeyu0709/yu-popup
 ##### npm
