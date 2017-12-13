@@ -41,8 +41,5 @@ popup({
 ```
 
 ## Links
-[![github text](http://p0kpwl4c8.bkt.clouddn.com/icon/github_c.png!icon_sm "github")](https://github.com/watanabeyu0709/yu-popup)
-##### github
-see https://github.com/watanabeyu0709/yu-popup
-##### npm
-see https://www.npmjs.com/package/yu-popup
+[![github](http://p0kpwl4c8.bkt.clouddn.com/icon/github_c.png!icon_sm "https://github.com/watanabeyu0709/yu-popup")](https://github.com/watanabeyu0709/yu-popup)
+[![npm](http://p0kpwl4c8.bkt.clouddn.com/icon/npm_c.png!icon_sm "https://www.npmjs.com/package/yu-popup")](https://www.npmjs.com/package/yu-popup)
