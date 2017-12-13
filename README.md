@@ -19,7 +19,7 @@ popup({
             type:'success',
             iconType:0,
             title:'hey!',
-            desc:['you got this message','beautiful,isn't it?'],
+            desc:['you got this message',"beautiful,isn't it?"],
             width:80,
             timing:1500,
             mounted(){
