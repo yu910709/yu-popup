@@ -1,13 +1,14 @@
-## Introduce  
+## Introduce
 
 this script is a simple popup and fit for mobile
 
 ## Quick to start
 
-install:     
-`npm install --save yu-popup `    
-import:  
-`import popup from 'yu-popup' `
+Using npm:
+```shell
+$ npm install --save yu-popup
+$ import popup from 'yu-popup'
+```
 
 ## Example
 
@@ -27,7 +28,7 @@ import:
                console.log('popup has been destroyed')
             }
         })
-        
+
 ## JSDoc
 
  * @param {object[]} option
@@ -42,7 +43,7 @@ import:
 
 ## Links
 
-##### github  
+##### github
 see https://github.com/watanabeyu0709/yu-popup
-##### npm  
+##### npm
 see https://www.npmjs.com/package/yu-popup
